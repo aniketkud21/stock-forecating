@@ -11,9 +11,10 @@ import pandas as pd
 import plotly.graph_objs as go
 import plotly.express as px
 
-#model
+# model
 from model import prediction
 from sklearn.svm import SVR
+
 
 def get_stock_price_fig(df):
 
@@ -36,7 +37,7 @@ def get_more(df):
 
 
 app = dash.Dash(external_stylesheets=[
-        "https://fonts.googleapis.com/css2?family=Roboto&display=swap"])
+    "https://fonts.googleapis.com/css2?family=Roboto&display=swap"])
 
 app.layout = html.Div(
     [
@@ -58,6 +59,7 @@ app.layout = html.Div(
                                         initial_visible_month=dt.now(),
                                         end_date=dt.now().date()),
                 ], className="date"),
+
                 html.Div([
                     html.Button(
                         "Stock Price", className="stock-btn", id="stock"),
@@ -74,22 +76,23 @@ app.layout = html.Div(
             ], className="nav"),
 
         # content
-        html.Div(
-            [
-                html.Div(
-                    [  # header
-                        html.Img(id="logo"),
-                        html.P(id="ticker")
-                    ],
-                    className="header"),
-                html.Div(id="description", className="decription_ticker"),
-                html.Div([], id="graphs-content"),
-                html.Div([], id="main-content"),
-                html.Div([], id="forecast-content")
-            ], className="content"),
+        html.Div([
+            html.Div(
+                [  # header
+                    html.Img(id="logo"),
+                    html.P(id="ticker")
+                ],
+                className="header"),
+            html.Div(id="description", className="decription_ticker"),
+            html.Div([], id="graphs-content"),
+            html.Div([], id="main-content"),
+            html.Div([], id="forecast-content")
+        ], className="content"),
     ], className="container")
 
 # callback for company info
+
+
 @app.callback([
     Output("description", "children"),
     Output("logo", "src"),
@@ -161,7 +164,7 @@ def indicators(n, start_date, end_date, val):
     return [dcc.Graph(figure=fig)]
 
 
-#callback for forecast
+# callback for forecast
 @app.callback([Output("forecast-content", "children")],
               [Input("forecast", "n_clicks")],
               [State("n_days", "value"),
@@ -177,4 +180,3 @@ def forecast(n, n_days, val):
 
 if __name__ == "__main__":
     app.run_server(debug=True)
-
