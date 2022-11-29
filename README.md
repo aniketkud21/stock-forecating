@@ -1,6 +1,4 @@
 # stock-forecating
-*README FILE*
--------------------
 
 AIML Capstone Project - Stock Price Visualisation & Forecasting using Support Vector Regression
 
