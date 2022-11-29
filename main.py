@@ -103,7 +103,7 @@ app.layout = html.Div(
 ], [Input("submit", "n_clicks")], [State("dropdown_tickers", "value")])
 def update_data(n, val):  # inpur parameter(s)
     if n == None:
-        return "Hey there! Please enter a legitimate stock code to get details.", "https://melmagazine.com/wp-content/uploads/2019/07/Screen-Shot-2019-07-31-at-5.47.12-PM.png", "Stonks", None, None, None
+        return "Hey there! Please enter a legitimate stock code to get details.", "https://images.unsplash.com/photo-1612010167108-3e6b327405f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", "Search Stocks", None, None, None
         # raise PreventUpdate
     else:
         if val == None:

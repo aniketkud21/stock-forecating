@@ -60,6 +60,7 @@ def prediction(stock, n_days):
                    epsilon=best_params["epsilon"],
                    gamma=best_params["gamma"],
                    max_iter=-1)
+    # best_model_score = best_svr.score
 
     # Support Vector Regression Models
 
@@ -68,6 +69,7 @@ def prediction(stock, n_days):
     rbf_svr = best_svr
 
     rbf_svr.fit(x_train, y_train)
+    best_model_score = rbf_svr.score(x_train,y_train)
 
     output_days = list()
     for i in range(1, n_days):
@@ -79,19 +81,26 @@ def prediction(stock, n_days):
         current += timedelta(days=1)
         dates.append(current)
 
-    # plot Results
-    # fig = go.Figure()
-    # fig.add_trace(
-    #     go.Scatter(x=np.array(x_test).flatten(),
-    #                y=y_test.values.flatten(),
-    #                mode='markers',
-    #                name='data'))
-    # fig.add_trace(
-    #     go.Scatter(x=np.array(x_test).flatten(),
-    #                y=rbf_svr.predict(x_test),
-    #                mode='lines+markers',
-    #                name='test'))
-    fig = go.Figure()
+   # plot Results
+    fig2 = go.Figure()
+    fig2.add_trace(
+        go.Scatter(x=np.array(x_test).flatten(),
+                   y=y_test.values.flatten(),
+                   mode='lines+markers',
+                   name='data'))
+    fig2.add_trace(
+        go.Scatter(x=np.array(x_test).flatten(),
+                   y=rbf_svr.predict(x_test),
+                   mode='lines+markers',
+                   name='test'))
+    fig2.update_layout(
+        title="TEST = " + str(best_model_score) ,
+        xaxis_title="Date",
+        yaxis_title="Closed Price",
+        # legend_title="Legend Title",
+    )
+
+    fig = go.Figure() 
     fig.add_trace(
         go.Scatter(
             x=dates,  # np.array(ten_days).flatten(),
@@ -105,4 +114,4 @@ def prediction(stock, n_days):
         # legend_title="Legend Title",
     )
 
-    return fig
+    return fig2
