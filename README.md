@@ -1,10 +1,10 @@
-# stock-forecating
+# Stock-Forecating
 
 AIML Capstone Project - Stock Price Visualisation & Forecasting using Support Vector Regression
 
-Jay Jani - 2020300023
-Shubhan Kadam - 2020300026
-Aniket Kudtarkar - 2020300033
+###Jay Jani - 2020300023
+###Shubhan Kadam - 2020300026
+###Aniket Kudtarkar - 2020300033
 
 -------------------
 PROBLEM STATEMENT
@@ -38,7 +38,7 @@ These are the two lines that are drawn around the hyperplane at a distance of ε
 Support Vector Regression is a supervised learning algorithm that is used to predict discrete values. Support Vector Regression uses the same principle as the SVMs. The basic idea behind SVR is to find the best fit line. In SVR, the best fit line is the hyperplane that has the maximum number of points.
 
 -------------------
-GITHUB REPo - https://github.com/aniketkud21/stock-forecating
+Github Repository - https://github.com/aniketkud21/stock-forecating
 -------------------
 
 
