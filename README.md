@@ -2,9 +2,9 @@
 
 AIML Capstone Project - Stock Price Visualisation & Forecasting using Support Vector Regression
 
-###Jay Jani - 2020300023
-###Shubhan Kadam - 2020300026
-###Aniket Kudtarkar - 2020300033
+### Jay Jani - 2020300023
+### Shubhan Kadam - 2020300026
+### Aniket Kudtarkar - 2020300033
 
 -------------------
 PROBLEM STATEMENT
